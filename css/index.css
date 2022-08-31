@@ -1,0 +1,23 @@
+.container {
+    width: 40%;
+    margin: 20px auto 0px auto;
+  }
+  .removido {
+    color: gray;
+  }
+  .removido label {
+    text-decoration: line-through;
+  }
+  ul li {
+    list-style-type: none;
+  }
+
+  .input-group-btn{
+    border: 10px;
+    text-align: center;
+    border: 15px;  
+    
+}
+input:hover{
+    background-color: rgb(187, 187, 187);
+ }

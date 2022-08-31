@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de notas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-mask-plugin@1.14.13/dist/jquery.mask.min.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+    
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Lista de notas</h2>
+      <div class="input-group">
+        <input placeholder="Razão Social"   v-model="razaoSocial" id= "razaoSocialInput"  type="text" class="js-nova-nota form-control" maxlength="30">
+        <input placeholder="CNPJ"           v-model="CNPJ" id= "CNPJInput"         type="text" class="js-nova-nota form-control" maxlength="14">
+        <input placeholder="email"         v-model="email" id= "emailInput"        type="email" class="js-nova-nota form-control">
+        <button @click="addItem" class="js-add btn btn-primary btn-block" type="button">Adicionar!</button>
+
+        
+      </div>
+      <div id="app">
+<!--
+        <ul v-for="info in infos">
+
+          <li>
+              <h3 v-html="info.symbol"><strong>{{info.code}}</strong></h3>
+              <ul>
+                  <li>
+                      descrição: <strong>{{info.description}}</strong>
+                  </li>
+                  <li>
+                      código: <strong>{{info.code}}</strong>
+                  </li>
+                  <li>
+                      rate: <strong>{{info.rate}}</strong>
+                  </li>
+              </ul>
+          </li>
+      </ul>-->
+
+      </div>
+      <ul></ul>
+     
+</div>
+
+      
+    </div>
+    <script>
+      var app = new Vue({
+          el:'#app',
+          data:{
+              titulo:'lista de notas',
+              infos :[]
+          },
+          mounted(){
+              axios.get("https://api.coindesk.com/v1/bpi/currentprice.json").
+              then( response =>( this.infos =(response.data.bpi)))
+          }
+  
+      })
+  
+  
+  </script>
+
+  </body>
+
+</html>

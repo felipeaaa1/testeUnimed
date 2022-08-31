@@ -1,0 +1,15 @@
+Back-end: Não é necessário. Utilizar dados mockados para representar o comportamento esperado pelo desafio técnico.
+Front-end: Framework preferencialmente utilizando Vue  que se comunique com estes serviços. É recomendado utilizar uma biblioteca, por exemplo, o mirage.js para mockar as chamadas REST.
+
+
+O cadastro do cliente deve conter as seguintes informações:
+Razão Social;
+CNPJ;
+Tipo de Regime Tributário (Simples Nacional ou Lucro Presumido);
+E-mail.
+
+Requisitos:
+Permitir o cadastro, Deleção e recuperação de clientes (empresas);
+Tela para executar as ações de cadastro, deleção e recuperação do dado
+Dashboard contendo uma análise dos dados(Quantidade de clientes, clientes por tipo de tributação e outro que você acha pertinente)
+
